@@ -10,19 +10,18 @@ MarketData = cg.get_coins_markets(vs_currency='usd', per_page=250, page=1)
 MarketData = pd.DataFrame(MarketData)
 #print(MarketData)
 
+name = 'BTCUSD'
+price = 60000
+perc = f'{0.05}%'
+
+# ------------------
+#       App
+# ------------------
 
 st.markdown('''# **CryptoMarket App**
 A simple cryptocurrency price app pulling price data from *CoinGecko*.
 ''')
-
 st.header('** Top 250 Crypto by Market Cap **')
-st.markdown('''Top 5 Crypto by MarketCap''')
-
-st.header('** Top 250 Crypto by Market Cap **')
-
-name = 'BTCUSD'
-price = 60000
-perc = f'{0.05}%'
 
 st.markdown('')
 st.markdown('''Top 5 Crypto by Market Captalisation''')
