@@ -25,7 +25,7 @@ perc = f'{5.15}%'
 st.markdown('''# ** Bati CryptoMarket App**
 A simple cryptocurrency price app pulling price data from *CoinGecko*.
 ''')
-st.header('** Top 250 Crypto by Market Cap **')
+st.header('** Highlights **')
 
 st.markdown('')
 st.markdown('Top 5 Crypto')
