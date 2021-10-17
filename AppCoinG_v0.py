@@ -10,7 +10,7 @@ MarketData = cg.get_coins_markets(vs_currency='usd', per_page=250, page=1)
 MarketData = pd.DataFrame(MarketData)
 
 MarketData.set_index('market_cap_rank', inplace=True)
-MarketData.drop(['id', 'symbol', 'image', 'fully_diluted_valuation', 'total_volume', 'high_24h', 'low_24h', 'price_change_24h', 'market_cap_change_24h', 'market_cap_change_percentage_24h', 'max_supply', 'atl', 'atl_change_percentage', 'atl_date', 'roi', 'last_updated'], axis=1, inplace=True)
+MarketData.drop(['id', 'image', 'fully_diluted_valuation', 'total_volume', 'high_24h', 'low_24h', 'price_change_24h', 'market_cap_change_24h', 'market_cap_change_percentage_24h', 'max_supply', 'atl', 'atl_change_percentage', 'atl_date', 'roi', 'last_updated'], axis=1, inplace=True)
 
 #print(MarketData)
 
