@@ -24,8 +24,9 @@ name = 'BTCUSD'
 price = 60000
 perc = f'{0.05}%'
 
-col1, col2, col3, col4, col5 = st.columns(5)
 st.markdown('''Top 5 Crypto by Market Captalisation''')
+col1, col2, col3, col4, col5 = st.columns(5)
+
 col1.metric(name, price, perc)
 col2.metric(name, price, perc)
 col3.metric(name, price, perc)
@@ -33,6 +34,7 @@ col4.metric(name, price, perc)
 col5.metric(name, price, perc)
 
 st.markdown('''Top 5 performers (24h)''')
+col1, col2, col3, col4, col5 = st.columns(5)
 col1.metric(name, price, perc)
 col2.metric(name, price, perc)
 col3.metric(name, price, perc)
@@ -40,6 +42,7 @@ col4.metric(name, price, perc)
 col5.metric(name, price, perc)
 
 st.markdown('''Worst 5 performers (24h)''')
+col1, col2, col3, col4, col5 = st.columns(5)
 col1.metric(name, price, perc)
 col2.metric(name, price, perc)
 col3.metric(name, price, perc)
