@@ -26,8 +26,8 @@ col1, col2, col3, col4, col5 = st.columns(5)
 #col1.metric(Col1['name'], Col1['current_price', Col1['price_change_percentage_24h']])
 
 name = 'BTCUSD'
-price = '60000'
-perc = '0.05'
+price = 60000
+perc = 0.05
 
 col1.metric(name, price, perc)
 col2.metric(name, price, perc)
