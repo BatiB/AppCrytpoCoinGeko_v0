@@ -11,8 +11,8 @@ MarketData = pd.DataFrame(MarketData)
 #print(MarketData)
 
 name = 'BTCUSD'
-price = 60000
-perc = f'{0.05}%'
+price = 61234.56
+perc = f'{5.15}%'
 
 # ------------------
 #       App
