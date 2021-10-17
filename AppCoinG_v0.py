@@ -28,7 +28,7 @@ A simple cryptocurrency price app pulling price data from *CoinGecko*.
 st.header('** Top 250 Crypto by Market Cap **')
 
 st.markdown('')
-st.markdown('''Top 5 Crypto by Market Captalisation''')
+st.markdown('Top 5 Crypto')
 col1, col2, col3, col4, col5 = st.columns(5)
 
 col1.metric(name, price, perc)
@@ -38,7 +38,7 @@ col4.metric(name, price, perc)
 col5.metric(name, price, perc)
 
 st.markdown('')
-st.markdown('''Top 5 performers (24h)''')
+st.markdown('Top 5 performers (24h)')
 col1, col2, col3, col4, col5 = st.columns(5)
 col1.metric(name, price, perc)
 col2.metric(name, price, perc)
@@ -47,7 +47,7 @@ col4.metric(name, price, perc)
 col5.metric(name, price, perc)
 
 st.markdown('')
-st.markdown('''Worst 5 performers (24h)''')
+st.markdown('Worst 5 performers (24h)')
 col1, col2, col3, col4, col5 = st.columns(5)
 col1.metric(name, price, perc)
 col2.metric(name, price, perc)
@@ -55,5 +55,5 @@ col3.metric(name, price, perc)
 col4.metric(name, price, perc)
 col5.metric(name, price, perc)
 
-st.header('**All Price**')
+st.header('**Top 250 by Market Capitalisation**')
 st.dataframe(MarketData)
