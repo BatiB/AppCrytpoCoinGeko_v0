@@ -62,6 +62,7 @@ col1, col2, col3 = st.columns(3)
 
 N = 10
 rank = np.linspace(1, N, N)
+rank = rank.astype(int)
 name1 = ['BTCUSD'] * N
 price1 = [61234.56] * N
 perc1 = [f'{0.05}%'] * N
