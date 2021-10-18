@@ -6,13 +6,19 @@ import streamlit as st
 # Activate API connection
 cg = CoinGeckoAPI()
 
+# Get Data
 MarketData = cg.get_coins_markets(vs_currency='usd', per_page=250, page=1)
 MarketData = pd.DataFrame(MarketData)
-
 MarketData.set_index('market_cap_rank', inplace=True)
 MarketData.drop(['id', 'image', 'fully_diluted_valuation', 'total_volume', 'high_24h', 'low_24h', 'price_change_24h', 'market_cap_change_24h', 'market_cap_change_percentage_24h', 'max_supply', 'atl', 'atl_change_percentage', 'atl_date', 'roi', 'last_updated'], axis=1, inplace=True)
 
-#print(MarketData)
+# Sort Change 24H % Max
+Max_MarketData = MarketData.copy()
+Max_MarketData.sort_values(by=['price_change_percentage_24h'], ascending=False, inplace=True)
+
+# Sort Change 24H % min
+Min_MarketData = MarketData.copy()
+Min_MarketData.sort_values(by=['price_change_percentage_24h'], ascending=True, inplace=True)
 
 name = 'BTCUSD'
 price = 61234.56
@@ -47,21 +53,40 @@ for i in range(5):
 
 st.markdown('')
 st.markdown('Top 5 performers (24h)')
-col1, col2, col3, col4, col5 = st.columns(5)
-col1.metric(name, price, perc)
-col2.metric(name, price, perc)
-col3.metric(name, price, perc)
-col4.metric(name, price, perc)
-col5.metric(name, price, perc)
+
+cols = st.columns(5)
+for i in range(5):
+    name1 = Max_MarketData.iloc[i]['name']
+    price1 = Max_MarketData.iloc[i]['current_price']
+    perc1 = Max_MarketData.iloc[i]['price_change_percentage_24h']
+                
+    cols[i].metric(name1, price1, f'{perc1}%')
+
+#col1, col2, col3, col4, col5 = st.columns(5)
+#col1.metric(name, price, perc)
+#col2.metric(name, price, perc)
+#col3.metric(name, price, perc)
+#col4.metric(name, price, perc)
+#col5.metric(name, price, perc)
 
 st.markdown('')
 st.markdown('Worst 5 performers (24h)')
-col1, col2, col3, col4, col5 = st.columns(5)
-col1.metric(name, price, perc)
-col2.metric(name, price, perc)
-col3.metric(name, price, perc)
-col4.metric(name, price, perc)
-col5.metric(name, price, perc)
+
+cols = st.columns(5)
+for i in range(5):
+    name1 = Min_MarketData.iloc[i]['name']
+    price1 = Min_MarketData.iloc[i]['current_price']
+    perc1 = Min_MarketData.iloc[i]['price_change_percentage_24h']
+                
+    cols[i].metric(name1, price1, f'{perc1}%')
+
+
+#col1, col2, col3, col4, col5 = st.columns(5)
+#col1.metric(name, price, perc)
+#col2.metric(name, price, perc)
+#col3.metric(name, price, perc)
+#col4.metric(name, price, perc)
+#col5.metric(name, price, perc)
 
 st.markdown('')
 st.header('**Top 10 by Market Capitalisation**')
