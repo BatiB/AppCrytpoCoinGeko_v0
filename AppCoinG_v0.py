@@ -55,8 +55,8 @@ col3.metric(name, price, perc)
 col4.metric(name, price, perc)
 col5.metric(name, price, perc)
 
-st.header('**Top 250 by Market Capitalisation**')
-#st.dataframe(MarketData)
+st.markdown('')
+st.header('**Top 10 by Market Capitalisation**')
 
 N = 10
 #rank = np.linspace(1, N, N)
@@ -91,5 +91,7 @@ for i in range(0, 10):
 #  col2.metric(name1[i], price1[i], perc1[i])
 #  col3.metric(name1[i], price1[i], perc1[i])
 
-
+st.markdown('')
+st.header('**Top 250 by Market Capitalisation**')
+st.dataframe(MarketData)
 
