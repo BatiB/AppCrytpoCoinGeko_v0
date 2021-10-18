@@ -68,8 +68,16 @@ name1 = ['BTCUSD'] * N
 price1 = [61234.56] * N
 perc1 = [f'{0.05}%'] * N
 
+# table
 cols = st.columns(4)
 
+# head
+cols[0].write('RANK')
+cols[1].write('SYMBOL')
+cols[2].write('PRICE')
+cols[3].write('24H (%)')
+
+# fill table
 for i in range(0, 10):    
     cols[0].write(f'{rank1[i]}')
     cols[1].write(name1[i])
