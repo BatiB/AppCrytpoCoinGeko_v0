@@ -56,4 +56,19 @@ col4.metric(name, price, perc)
 col5.metric(name, price, perc)
 
 st.header('**Top 250 by Market Capitalisation**')
-st.dataframe(MarketData)
+#st.dataframe(MarketData)
+
+col1, col2, col3 = st.columns(3)
+
+N = 10
+name1 = ['BTCUSD'] * N
+price1 = [61234.56] * N
+perc1 = [f'{0.05}%'] * N
+
+for i in range(N):
+  col1.metric(name1[i], price1[i], perc1[i])
+  col2.metric(name1[i], price1[i], perc1[i])
+  col3.metric(name1[i], price1[i], perc1[i])
+
+
+
