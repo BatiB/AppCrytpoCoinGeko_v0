@@ -103,7 +103,16 @@ perc1 = MarketData.iloc[0]['price_change_percentage_24h']
 
 # prova
 cols = st.columns(5)
-cols[0].metric(name1, price1, f'{perc1}')
+#cols[0].metric(name1, price1, f'{perc1}%')
+
+for i in range(5):
+    for j in range(5):
+        name1 = MarketData.iloc[j]['name']
+        price1 = MarketData.iloc[j]['current_price']
+        perc1 = MarketData.iloc[j]['price_change_percentage_24h']
+                
+        cols[i].metric(name1, price1, f'{perc1}%')
+        
 
 
 
