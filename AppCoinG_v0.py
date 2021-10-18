@@ -61,8 +61,9 @@ st.header('**Top 250 by Market Capitalisation**')
 col1, col2, col3 = st.columns(3)
 
 N = 10
-rank = np.linspace(1, N, N)
-rank = rank.astype(int)
+#rank = np.linspace(1, N, N)
+#rank = rank.astype(int)
+rank1 = [1,2,3,4,5,6,7,8,9,10]
 name1 = ['BTCUSD'] * N
 price1 = [61234.56] * N
 perc1 = [f'{0.05}%'] * N
@@ -70,10 +71,10 @@ perc1 = [f'{0.05}%'] * N
 
 for i in range(1, 10):
     cols = st.columns(4)
-    cols[0].write(rank[i])
-    cols[1].write(name[i])
-    cols[2].write(price[i])
-    cols[3].write(f'{i}%')
+    cols[0].write(rank1[i])
+    cols[1].write(name1[i])
+    cols[2].write(price1[i])
+    cols[3].write(perc1[i])
 
 
 #for i in range(N):
