@@ -31,6 +31,8 @@ perc = f'{5.15}%'
 st.markdown('''# ** Bati CryptoMarket App**
 A simple cryptocurrency price app pulling price data from *CoinGecko*.
 ''')
+
+# Table 1
 st.header('** Highlights **')
 
 st.markdown('')
@@ -44,13 +46,6 @@ for i in range(5):
                 
     cols[i].metric(name1, price1, f'{perc1}%')
 
-#col1, col2, col3, col4, col5 = st.columns(5)
-#col1.metric(name, price, perc)
-#col2.metric(name, price, perc)
-#col3.metric(name, price, perc)
-#col4.metric(name, price, perc)
-#col5.metric(name, price, perc)
-
 st.markdown('')
 st.markdown('Top 5 performers (24h)')
 
@@ -61,13 +56,6 @@ for i in range(5):
     perc1 = Max_MarketData.iloc[i]['price_change_percentage_24h']
                 
     cols[i].metric(name1, price1, f'{perc1}%')
-
-#col1, col2, col3, col4, col5 = st.columns(5)
-#col1.metric(name, price, perc)
-#col2.metric(name, price, perc)
-#col3.metric(name, price, perc)
-#col4.metric(name, price, perc)
-#col5.metric(name, price, perc)
 
 st.markdown('')
 st.markdown('Worst 5 performers (24h)')
@@ -80,14 +68,8 @@ for i in range(5):
                 
     cols[i].metric(name1, price1, f'{perc1}%')
 
-
-#col1, col2, col3, col4, col5 = st.columns(5)
-#col1.metric(name, price, perc)
-#col2.metric(name, price, perc)
-#col3.metric(name, price, perc)
-#col4.metric(name, price, perc)
-#col5.metric(name, price, perc)
-
+# ------------------------------
+# Table 2
 st.markdown('')
 st.header('**Top 10 by Market Capitalisation**')
 
@@ -99,7 +81,6 @@ name1 = ['BTCUSD'] * N
 price1 = [61234.56] * N
 perc1 = [f'{0.05}%'] * N
 
-# table
 cols = st.columns(6)
 
 # head
@@ -119,24 +100,13 @@ for i in range(0, 10):
     cols[4].write(f'{price1[i]}')
     cols[5].write(f'{price1[i]}')
 
-#for i in range(N):
-#  col1.metric(name1[i], price1[i], perc1[i])
-#  col2.metric(name1[i], price1[i], perc1[i])
-#  col3.metric(name1[i], price1[i], perc1[i])
+# ------------------------------
+# Table 3
 
 st.markdown('')
 st.header('**Top 250 by Market Capitalisation**')
 st.dataframe(MarketData)
 
-# -------------------------------------------
-
-#name1 = MarketData.iloc[0]['name']
-#price1 = MarketData.iloc[0]['current_price']
-#perc1 = MarketData.iloc[0]['price_change_percentage_24h']
-
-# prova
-#cols = st.columns(5)
-#cols[0].metric(name1, price1, f'{perc1}%')
 
 
         
