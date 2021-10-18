@@ -30,6 +30,7 @@ st.header('** Highlights **')
 st.markdown('')
 st.markdown('Top 5 Crypto')
 
+cols = st.columns(5)
 for i in range(5):
     name1 = MarketData.iloc[i]['name']
     price1 = MarketData.iloc[i]['current_price']
