@@ -103,7 +103,7 @@ perc1 = MarketData.iloc[0]['price_change_percentage_24h']
 
 # prova
 cols = st.columns(5)
-cols[0].metric(name1, price1, perc1)
+cols[0].metric(name1, price1, f'{perc1}')
 
 
 
