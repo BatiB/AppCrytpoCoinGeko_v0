@@ -71,7 +71,7 @@ perc1 = [f'{0.05}%'] * N
 
 for i in range(0, 10):
     cols = st.columns(4)
-    cols[0].write(rank1[i])
+    cols[0].write(f'{rank1[i]}')
     cols[1].write(name1[i])
     cols[2].write(price1[i])
     cols[3].write(perc1[i])
