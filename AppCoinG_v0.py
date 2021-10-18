@@ -58,8 +58,6 @@ col5.metric(name, price, perc)
 st.header('**Top 250 by Market Capitalisation**')
 #st.dataframe(MarketData)
 
-col1, col2, col3 = st.columns(3)
-
 N = 10
 #rank = np.linspace(1, N, N)
 #rank = rank.astype(int)
@@ -69,13 +67,15 @@ price1 = [61234.56] * N
 perc1 = [f'{0.05}%'] * N
 
 # table
-cols = st.columns(4)
+cols = st.columns(6)
 
 # head
 cols[0].write('RANK')
 cols[1].write('SYMBOL')
 cols[2].write('PRICE')
 cols[3].write('24H (%)')
+cols[4].write('XXXX')
+cols[5].write('YYYY')
 
 # fill table
 for i in range(0, 10):    
@@ -83,7 +83,8 @@ for i in range(0, 10):
     cols[1].write(name1[i])
     cols[2].write(f'{price1[i]}')
     cols[3].write(perc1[i])
-
+    cols[4].write(f'{price1[i]}')
+    cols[5].write(f'{price1[i]}')
 
 #for i in range(N):
 #  col1.metric(name1[i], price1[i], perc1[i])
