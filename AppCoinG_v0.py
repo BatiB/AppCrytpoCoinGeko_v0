@@ -95,3 +95,16 @@ st.markdown('')
 st.header('**Top 250 by Market Capitalisation**')
 st.dataframe(MarketData)
 
+# -------------------------------------------
+
+name1 = MarketData.iloc[0]['name']
+price1 = MarketData.iloc[0]['current_price']
+perc1 = MarketData.iloc[0]['price_change_percentage_24h']
+
+# prova
+cols = st.columns(5)
+cols[0].metric(name1, price1, perc1)
+
+
+
+
