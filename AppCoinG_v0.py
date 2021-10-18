@@ -69,7 +69,7 @@ price1 = [61234.56] * N
 perc1 = [f'{0.05}%'] * N
 
 
-for i in range(1, 10):
+for i in range(0, 10):
     cols = st.columns(4)
     cols[0].write(rank1[i])
     cols[1].write(name1[i])
