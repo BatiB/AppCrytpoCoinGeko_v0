@@ -29,13 +29,20 @@ st.header('** Highlights **')
 
 st.markdown('')
 st.markdown('Top 5 Crypto')
-col1, col2, col3, col4, col5 = st.columns(5)
 
-col1.metric(name, price, perc)
-col2.metric(name, price, perc)
-col3.metric(name, price, perc)
-col4.metric(name, price, perc)
-col5.metric(name, price, perc)
+for i in range(5):
+    name1 = MarketData.iloc[i]['name']
+    price1 = MarketData.iloc[i]['current_price']
+    perc1 = MarketData.iloc[i]['price_change_percentage_24h']
+                
+    cols[i].metric(name1, price1, f'{perc1}%')
+
+#col1, col2, col3, col4, col5 = st.columns(5)
+#col1.metric(name, price, perc)
+#col2.metric(name, price, perc)
+#col3.metric(name, price, perc)
+#col4.metric(name, price, perc)
+#col5.metric(name, price, perc)
 
 st.markdown('')
 st.markdown('Top 5 performers (24h)')
@@ -97,20 +104,15 @@ st.dataframe(MarketData)
 
 # -------------------------------------------
 
-name1 = MarketData.iloc[0]['name']
-price1 = MarketData.iloc[0]['current_price']
-perc1 = MarketData.iloc[0]['price_change_percentage_24h']
+#name1 = MarketData.iloc[0]['name']
+#price1 = MarketData.iloc[0]['current_price']
+#perc1 = MarketData.iloc[0]['price_change_percentage_24h']
 
 # prova
-cols = st.columns(5)
+#cols = st.columns(5)
 #cols[0].metric(name1, price1, f'{perc1}%')
 
-for i in range(5):
-    name1 = MarketData.iloc[i]['name']
-    price1 = MarketData.iloc[i]['current_price']
-    perc1 = MarketData.iloc[i]['price_change_percentage_24h']
-                
-    cols[i].metric(name1, price1, f'{perc1}%')
+
         
 
 
