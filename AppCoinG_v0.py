@@ -198,5 +198,6 @@ fig5 = px.bar(x = e,
               y = f,
               labels={'x':'total_bill', 'y':'count'},
               color = f,
-              color_continuous_scale=px.colors.sequential.Viridis)
+              color_continuous_scale=px.colors.sequential.Viridis,
+              template = Temp[2])
 st.plotly_chart(fig5)
