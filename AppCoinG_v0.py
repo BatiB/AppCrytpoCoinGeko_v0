@@ -127,7 +127,6 @@ plotly_figure = px.line(x = a,
 
 st.plotly_chart(plotly_figure)
 # ------------------------------
-
 st.markdown('')
 st.header('**Scatter Plot**')
 
@@ -136,7 +135,16 @@ fig0 = px.scatter(x=[0, 1, 2, 3, 4],
 
 st.plotly_chart(fig0)
 
-c = np.linspace(1,10,10)
-d = np.random.rand(10,10)
+# ------------------------------
+st.markdown('')
+st.header('**Scatter Plot 1**')
 
+c = np.linspace(1,10,10)
+d = a ** 2
+
+fig1 = px.scatter(x = c,
+                   y = d,
+                  color = c)
+
+st.plotly_chart(fig1)
 
