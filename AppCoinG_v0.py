@@ -150,10 +150,11 @@ fig1 = px.scatter(x = c,
 st.plotly_chart(fig1)
 
 # Fig 2
+Temp = 'plotly_dark'
 fig2 = px.scatter(x = c,
                   y = d,
                   color = c,
                   color_continuous_scale=px.colors.sequential.Viridis,
-                  showgrid=False)
+                  template=Temp)
 
 st.plotly_chart(fig2)
