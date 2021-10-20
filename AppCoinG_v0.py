@@ -2,6 +2,7 @@
 from pycoingecko import CoinGeckoAPI
 import pandas as pd
 import streamlit as st
+import plotly.express as px
 
 # Activate API connection
 cg = CoinGeckoAPI()
@@ -110,8 +111,17 @@ st.dataframe(MarketData)
 st.markdown('')
 st.write(MarketData)
 
+# ------------------------------
+# Test Plotly
 
-        
+a = np.linespace(1,10,10)
+b = a ** 2
+
+plotly_figure = px.line(x = a,
+                        y = b,
+                       title = 'trial')
+
+st.plotly_chart(plotly_figure)
 
 
 
