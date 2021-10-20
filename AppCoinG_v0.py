@@ -143,19 +143,22 @@ c = np.linspace(1,10,10)
 d = a ** 2
 
 # Fig 1
+Temp = ["plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", "simple_white", "none"]
+
 fig1 = px.scatter(x = c,
                    y = d,
-                  color = c)
+                  color = c,
+                  template=Temp[5])
 
 st.plotly_chart(fig1)
 
 # Fig 2
-Temp = 'plotly_dark'
+#Temp = 'plotly_dark'
 fig2 = px.scatter(x = c,
                   y = d,
                   color = c,
                   color_continuous_scale=px.colors.sequential.Viridis,
-                  template=Temp)
+                  template=Temp[2])
 
 st.plotly_chart(fig2)
 
