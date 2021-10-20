@@ -107,6 +107,8 @@ st.markdown('')
 st.header('**Top 250 by Market Capitalisation**')
 st.dataframe(MarketData)
 
+st.markdown('')
+st.write(MarketData)
 
 
         
