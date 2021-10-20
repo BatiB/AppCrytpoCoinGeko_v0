@@ -153,6 +153,6 @@ st.plotly_chart(fig1)
 fig2 = px.scatter(x = c,
                   y = d,
                   color = c,
-                  colorscale = 'Viridis')
+                  color_continuous_scale=px.colors.sequential.Viridis)
 
 st.plotly_chart(fig2)
