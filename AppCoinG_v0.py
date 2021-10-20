@@ -165,6 +165,8 @@ st.plotly_chart(fig2)
 # ------------------------------
 # Histogram
 # ------------------------------
+# Fig 3
+
 st.markdown('')
 st.header('**Histogram**')
 
@@ -172,4 +174,16 @@ e = np.linspace(1,100,100)
 f = np.log(e)
 
 fig3 = px.bar(x = e, y = f, labels={'x':'total_bill', 'y':'count'})
+st.plotly_chart(fig3)
+
+# ------------------------------
+# Fig 4
+
+e = np.linspace(1,100,100)
+f = np.log(e)
+
+fig3 = px.bar(x = e,
+              y = f,
+              labels={'x':'total_bill', 'y':'count'},
+              color = f)
 st.plotly_chart(fig3)
