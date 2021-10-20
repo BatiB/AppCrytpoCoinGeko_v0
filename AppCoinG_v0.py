@@ -114,6 +114,9 @@ st.write(MarketData)
 
 # ------------------------------
 # Test Plotly
+# ------------------------------
+# Line
+# ------------------------------
 
 st.markdown('')
 st.header('**Line Plot**')
@@ -126,21 +129,16 @@ plotly_figure = px.line(x = a,
                        title = 'trial')
 
 st.plotly_chart(plotly_figure)
+
 # ------------------------------
+# Scatter
+# ------------------------------
+
 st.markdown('')
 st.header('**Scatter Plot**')
 
-fig0 = px.scatter(x=[0, 1, 2, 3, 4],
-                 y=[0, 1, 4, 9, 16])
-
-st.plotly_chart(fig0)
-
-# ------------------------------
-st.markdown('')
-st.header('**Scatter Plot 1**')
-
 c = np.linspace(1,10,10)
-d = a ** 2
+d = c ** 2
 
 # Fig 1
 Temp = ["plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", "simple_white", "none"]
@@ -153,6 +151,7 @@ fig1 = px.scatter(x = c,
 
 st.plotly_chart(fig1)
 
+# ------------------------------
 # Fig 2
 #Temp = 'plotly_dark'
 fig2 = px.scatter(x = c,
@@ -163,3 +162,14 @@ fig2 = px.scatter(x = c,
 
 st.plotly_chart(fig2)
 
+# ------------------------------
+# Histogram
+# ------------------------------
+st.markdown('')
+st.header('**Histogram**')
+
+e = np.linspace(1,100,100)
+f = np.log(e)
+
+fig3 = px.bar(x = e, y = f, labels={'x':'total_bill', 'y':'count'})
+st.plotly_chart(fig3)
