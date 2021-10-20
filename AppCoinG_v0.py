@@ -114,7 +114,7 @@ st.write(MarketData)
 # ------------------------------
 # Test Plotly
 
-a = np.linespace(1,10,10)
+a = np.linspace(1,10,10)
 b = a ** 2
 
 plotly_figure = px.line(x = a,
