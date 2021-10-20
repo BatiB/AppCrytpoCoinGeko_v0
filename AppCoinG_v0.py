@@ -142,9 +142,18 @@ st.header('**Scatter Plot 1**')
 c = np.linspace(1,10,10)
 d = a ** 2
 
+# Fig 1
 fig1 = px.scatter(x = c,
                    y = d,
                   color = c)
 
 st.plotly_chart(fig1)
 
+# Fig 2
+fig2 = px.scatter(x = c,
+                  y = d,
+                  color = c,
+                  colorscale='Viridis',
+                  showscale=True)
+
+st.plotly_chart(fig2)
