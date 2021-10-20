@@ -115,6 +115,9 @@ st.write(MarketData)
 # ------------------------------
 # Test Plotly
 
+st.markdown('')
+st.header('**Line Plot**')
+
 a = np.linspace(1,10,10)
 b = a ** 2
 
@@ -123,8 +126,17 @@ plotly_figure = px.line(x = a,
                        title = 'trial')
 
 st.plotly_chart(plotly_figure)
+# ------------------------------
 
+st.markdown('')
+st.header('**Scatter Plot**')
 
+fig0 = px.scatter(x=[0, 1, 2, 3, 4],
+                 y=[0, 1, 4, 9, 16])
 
+st.plotly_chart(fig0)
+
+c = np.linspace(1,10,10)
+d = np.random.rand(10,10)
 
 
