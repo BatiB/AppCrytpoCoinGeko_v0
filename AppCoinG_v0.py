@@ -182,8 +182,21 @@ st.plotly_chart(fig3)
 e = np.linspace(1,100,100)
 f = np.log(e)
 
-fig3 = px.bar(x = e,
+fig4 = px.bar(x = e,
               y = f,
               labels={'x':'total_bill', 'y':'count'},
               color = f)
-st.plotly_chart(fig3)
+st.plotly_chart(fig4)
+
+# ------------------------------
+# Fig 5
+
+e = np.linspace(1,100,100)
+f = np.log(e)
+
+fig5 = px.bar(x = e,
+              y = f,
+              labels={'x':'total_bill', 'y':'count'},
+              color = f,
+              color_continuous_scale=px.colors.sequential.Viridis)
+st.plotly_chart(fig5)
