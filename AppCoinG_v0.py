@@ -148,6 +148,7 @@ Temp = ["plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", "simple_w
 fig1 = px.scatter(x = c,
                    y = d,
                   color = c,
+                  color_continuous_scale=px.colors.sequential.Inferno,
                   template=Temp[5])
 
 st.plotly_chart(fig1)
