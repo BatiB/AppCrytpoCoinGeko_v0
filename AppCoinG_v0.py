@@ -158,3 +158,4 @@ fig2 = px.scatter(x = c,
                   template=Temp)
 
 st.plotly_chart(fig2)
+
