@@ -209,6 +209,15 @@ st.plotly_chart(fig5)
 st.markdown('')
 st.header('**Time series**')
 
+df1 = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
+fig7 = px.line(df1, x='Date', y='AAPL.High', title='Time Series with Rangeslider')
+fig7.update_xaxes(rangeslider_visible=True)
+
+st.plotly_chart(fig7)
+
+
+# Not working (error datetime)
+'''
 HistoryPrice = cg.get_coin_market_chart_by_id(id='ethereum', vs_currency='usd', days=295)
 HistoryPrice = pd.DataFrame(HistoryPrice)
 
@@ -221,4 +230,5 @@ fig6 = px.line(df, x='Date', y='Price', title='Time Series with Rangeslider')
 
 fig6.update_xaxes(rangeslider_visible=True)
 st.plotly_chart(fig6)
+'''
 
