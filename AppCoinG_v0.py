@@ -209,25 +209,50 @@ st.plotly_chart(fig5)
 st.markdown('')
 st.header('**Time series**')
 
+# ------------------------------
+# Not working (error datetime)
+
+#HistoryPrice = cg.get_coin_market_chart_by_id(id='ethereum', vs_currency='usd', days=295)
+#HistoryPrice = pd.DataFrame(HistoryPrice)
+
+#PriceHist = pd.DataFrame(HistoryPrice['prices'])
+#PriceHist.rename(columns={0: 'Date', 1: 'Price'}, inplace=True)
+#PriceHist['Date'] = pd.to_datetime(PriceHist['Date'], unit='ms')
+
+#fig6 = px.line(df, x='Date', y='Price', title='Time Series with Rangeslider')
+#fig6.update_xaxes(rangeslider_visible=True)
+#st.plotly_chart(fig6)
+# ------------------------------
+# Fig 7
+
 df1 = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
 fig7 = px.line(df1, x='Date', y='AAPL.High', title='Time Series with Rangeslider')
 fig7.update_xaxes(rangeslider_visible=True)
 
 st.plotly_chart(fig7)
 
+# ------------------------------
+# Fig 8
 
-# Not working (error datetime)
+df1 = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
+fig8 = px.line(df1, x='Date', y='AAPL.High', title='Time Series with Rangeslider')
+fig8.update_xaxes(rangeslider_visible=True)
 
-HistoryPrice = cg.get_coin_market_chart_by_id(id='ethereum', vs_currency='usd', days=295)
-HistoryPrice = pd.DataFrame(HistoryPrice)
+fig8.update_xaxes(
+    rangeslider_visible=True,
+    rangeselector=dict(
+        buttons=list([
+            dict(count=1, label="1m", step="month", stepmode="backward"),
+            dict(count=6, label="6m", step="month", stepmode="backward"),
+            dict(count=1, label="YTD", step="year", stepmode="todate"),
+            dict(count=1, label="1y", step="year", stepmode="backward"),
+            dict(step="all")
+        ])
+    )
+)
 
-PriceHist = pd.DataFrame(HistoryPrice['prices'])
-PriceHist.rename(columns={0: 'Date', 1: 'Price'}, inplace=True)
-#PriceHist['Date'] = pd.to_datetime(PriceHist['Date'], unit='ms')
+st.plotly_chart(fig8)
 
-fig6 = px.line(df, x='Date', y='Price', title='Time Series with Rangeslider')
 
-fig6.update_xaxes(rangeslider_visible=True)
-st.plotly_chart(fig6)
 
 
