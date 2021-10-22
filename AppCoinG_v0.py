@@ -201,3 +201,23 @@ fig5 = px.bar(x = e,
               color_continuous_scale=px.colors.sequential.Viridis,
               template = Temp[2])
 st.plotly_chart(fig5)
+
+# ------------------------------
+# Time series
+# ------------------------------
+
+st.markdown('')
+st.header('**Time series**')
+
+HistoryPrice = cg.get_coin_market_chart_by_id(id='ethereum', vs_currency='usd', days=295)
+HistoryPrice = pd.DataFrame(HistoryPrice)
+
+PriceHist = pd.DataFrame(HistoryPrice['prices'])
+PriceHist.columns = ['Date', 'Price']
+PriceHist['Date'] = pd.to_datetime(PriceHist['Date'], unit='ms')
+
+fig6 = px.line(df, x='Date', y='Price', title='Time Series with Rangeslider')
+
+fig6.update_xaxes(rangeslider_visible=True)
+st.plotly_chart(fig6)
+
