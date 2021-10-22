@@ -217,18 +217,17 @@ st.plotly_chart(fig7)
 
 
 # Not working (error datetime)
-'''
+
 HistoryPrice = cg.get_coin_market_chart_by_id(id='ethereum', vs_currency='usd', days=295)
 HistoryPrice = pd.DataFrame(HistoryPrice)
 
 PriceHist = pd.DataFrame(HistoryPrice['prices'])
-#PriceHist.columns = ['Date', 'Price']
 PriceHist.rename(columns={0: 'Date', 1: 'Price'}, inplace=True)
-PriceHist['Date'] = pd.to_datetime(PriceHist['Date'], unit='ms')
+#PriceHist['Date'] = pd.to_datetime(PriceHist['Date'], unit='ms')
 
 fig6 = px.line(df, x='Date', y='Price', title='Time Series with Rangeslider')
 
 fig6.update_xaxes(rangeslider_visible=True)
 st.plotly_chart(fig6)
-'''
+
 
